@@ -106,24 +106,8 @@ function set_prompt () {
 
 PROMPT_COMMAND='set_prompt'
 
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/apps/miniconda3/latest/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/apps/miniconda3/latest/etc/profile.d/conda.sh" ]; then
-        . "/apps/miniconda3/latest/etc/profile.d/conda.sh"
-    else
-        export PATH="/apps/miniconda3/latest/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 ## ZACH ALIASES
+# gitSSH: turns all https urls into ssh urls and then runs the equivalent git command
 gitSSH(){
         array="${@}"
         echo "git ${array}" | sed -r 's/https\:\/\/github.com\/([^\s\/]+)\/([^\s\/]+)/git@github.com\:\1\/\2.git/g' | bash
