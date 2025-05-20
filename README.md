@@ -5,7 +5,17 @@ bashrc and setup scripts for the next time I have to wipe my laptop or set up a 
 Within the VM, run
 ```
 EMAIL="The email attached to your github"
+```
+```
 NAME="Your name"
+```
+```
+echo "***"
+echo "CONFIGURING GIT NAMES"
+echo "***"
+git config --global user.email "$EMAIL"
+git config --global user.name "$NAME"
+git config --global core.editor "vim"
 ```
 ```
 echo "***"
